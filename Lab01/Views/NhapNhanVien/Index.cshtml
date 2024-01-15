@@ -1,0 +1,105 @@
+﻿
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Index</h2>
+
+<div class="container-fluid">
+    <table class="table table-bordered table-striped">
+        <thead>
+            <tr>
+                <th scope="col" colspan="2" class="text-center">Nhập nhân viên</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <th scope="row">Mã nhân viên</th>
+                <td>
+                    <div class="input-group">
+                        <input type="text" class="form-control" placeholder="Employee ID..." aria-label="EmployeeId">
+                    </div>
+                </td>
+            </tr>
+            <tr>
+                <th scope="row">Họ tên</th>
+                <td>
+                    <div class="input-group">
+                        <input type="text" class="form-control" placeholder="Fullname..." aria-label="Fullname">
+                    </div>
+                </td>
+            </tr>
+            <tr>
+                <th scope="row">Ngày sinh</th>
+                <td>
+                    <div class="input-group">
+                        <input type="text" class="form-control" placeholder="Date of birth..." aria-label="dateOfBirth">
+                    </div>
+                </td>
+            </tr>
+            <tr>
+                <th scope="row">Giới tính</th>
+                <td>
+                    <div class="container-fluid row">
+                        <div class="form-check col-2">
+                            <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1">
+                            <label class="form-check-label" for="flexRadioDefault1">
+                                Nam
+                            </label>
+                        </div>
+                        <div class="form-check col-2">
+                            <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault2" checked>
+                            <label class="form-check-label" for="flexRadioDefault2">
+                                Nữ
+                            </label>
+                        </div>
+                    </div>
+                </td>
+            </tr>
+            <tr>
+                <th>Chức vụ</th>
+                <td>
+                    <select class="form-select" aria-label="">
+                        <option selected>Vui lòng chọn...</option>
+                        <option value="1">Trưởng phòng</option>
+                        <option value="2">Phó phòng</option>
+                        <option value="3">Trưởng nhóm</option>
+                        <option value="4">Giám đốc</option>
+                        <option value="5">Nhân viên</option>
+                    </select>
+                </td>
+            </tr>
+            <tr>
+                <th>Ngoại ngữ</th>
+                <td>
+                    <div class="container-fluid row">
+                        <div class="form-check col-2">
+                            <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+                            <label class="form-check-label" for="flexCheckDefault">
+                                Anh
+                            </label>
+                        </div>
+                        <div class="form-check col-2">
+                            <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked" checked>
+                            <label class="form-check-label" for="flexCheckChecked">
+                                Pháp
+                            </label>
+                        </div>
+                        <div class="form-check col-2">
+                            <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked" >
+                            <label class="form-check-label" for="flexCheckChecked">
+                                Nga
+                            </label>
+                        </div>
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <div class="col text-end">
+        <button type="button" class="btn btn-primary me-3">Save</button>
+        <button type="button" class="btn btn-danger">Delete</button>
+    </div>
+
+</div>

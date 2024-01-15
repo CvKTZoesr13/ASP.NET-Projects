@@ -1,0 +1,116 @@
+﻿<!DOCTYPE html>
+<style>
+    .text-white {
+        color: white;
+    }
+
+    .pl-80 {
+        padding-left: 80%;
+    }
+
+    .navbar-right li {
+        text-align: center;
+        border-left: 1px solid white;
+    }
+
+    .menu {
+        border-top: 1px solid white;
+    }
+
+        .menu ul {
+            margin: 8px 0;
+        }
+
+            .menu ul li a {
+                color: white;
+            }
+
+    .content {
+        margin-top: 90px;
+    }
+
+    .mb-0 {
+        margin-bottom: unset;
+    }
+
+    .right-panel {
+        position: fixed;
+        top: 136px;
+        right: 0;
+        bottom: 0;
+        z-index: 99;
+        width: 16.6666667%;
+    }
+</style>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>My website</title>
+    <link rel="stylesheet" href="~/Content/Site.css" />
+    @Styles.Render("~/Content/css")
+    @Scripts.Render("~/bundles/modernizr")
+</head>
+<body>
+    <div class="main">
+        <div class="page">
+            <div class="header navbar navbar-fixed-top navbar-inverse text-left text-white">
+                <div class="header-img pl-80 text-nowrap text-sm-center">
+                    <h1>Faculty of IT</h1>
+                    <p>Hanoi university of Industry</p>
+                </div>
+                <div class="menu row">
+                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <ul class="nav-justified col-lg-8 navbar-right navbar-collapse collapse">
+                        <li>@Html.ActionLink("Home", "Index", "Home")</li>
+                        <li><a href="#">Products</a></li>
+                        <li><a href="#">Services</a></li>
+                        <li>@Html.ActionLink("About us", "About", "Home")</li>
+                        <li>@Html.ActionLink("Contact us", "Contact", "Home")</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="content container-fluid body-content row">
+                <div class="left-panel col-lg-10 col-md-8">
+                    <div class="left-panel-in">
+                        @RenderBody()
+                    </div>
+                </div>
+                <div class="navbar-inverse right-panel">
+                    <div>
+                        <div class="right-panel-in text-white">
+                            <h3 class="text-center">Categories</h3>
+                            <ul>
+                                <li><a href="">Add a new student<br></a></li>
+                                <li><a href="">Calculator<br></a></li>
+                                <li><a href="">Display a list of students<br></a></li>
+                                <li><a href="">Display a course<br></a></li>
+                                <li><a href="">Display 2 lists of students<br></a></li>
+                            </ul>
+
+                            <h3 class="text-center">Blogroll</h3>
+                            <ul>
+                                <li><a href="#">Overview</a></li>
+                            </ul>
+                            <p> &nbsp;</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="footer navbar-fixed-bottom navbar-inverse text-white text-center line-height-100">
+                <p class="mb-0">
+                    298 Cầu Diễn, Bắc Từ Liêm, Hà Nội
+                </p>
+            </div>
+        </div>
+    </div>
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/bootstrap")
+    @RenderSection("scripts", required: false)
+</body>
+</html>

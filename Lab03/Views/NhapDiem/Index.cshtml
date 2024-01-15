@@ -1,0 +1,18 @@
+﻿
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Read/Write File</h2>
+<form>
+    <div>Mã SV:</div> <input name="Id" />
+    <div>Họ Tên:</div> <input name="Name" />
+    <div>Điểm:</div> <input name="Mark" />
+    <hr />
+    <input type="submit" value="Save" formaction="/NhapDiem/Save" />
+    <input type="submit" value="Open" formaction="/NhapDiem/Open" />
+</form>
+<br />
+<p>@ViewBag.HanhDong</p>
+<p>@ViewBag.ThongTin</p>

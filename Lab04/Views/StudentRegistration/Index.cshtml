@@ -1,0 +1,75 @@
+﻿
+@{
+    ViewBag.Title = "Index";
+}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Registration</title>
+</head>
+<body>
+    <h2>Student Regstration Form</h2>
+    @using (Html.BeginForm("Registration", "StudentRegistration", FormMethod.Post, new {}))
+    {
+        <table border="1" style="border-collapse: collapse;" cellpadding="5">
+            <tr>
+                <td>@Html.Label("Student Name")</td>
+                <td>@Html.TextBox("name")</td>
+            </tr>
+            <tr>
+                <td>@Html.Label("Gender")</td>
+                <td>
+                    @Html.RadioButton("gender", "Male")Male
+                    @Html.RadioButton("gender", "Female")Female
+                </td>
+
+            </tr>
+            <tr>
+                <td>@Html.Label("Email")</td>
+                <td>@Html.TextBox("email")</td>
+            </tr>
+            <tr>
+                <td>@Html.Label("Address")</td>
+                <td>
+                    @{
+                        IEnumerable<string> stringAddress = new List<string> { "Hà Nội", "Đà Nẵng", "Hồ Chí Minh" };
+                    }
+                    @Html.DropDownList("address", new SelectList(stringAddress, stringAddress.FirstOrDefault()), "---select options---")
+                </td>
+            </tr>
+            <tr>
+                <td>@Html.Label("Subject")</td>
+                <td>
+                    @Html.CheckBox("History")History
+                    @Html.CheckBox("Chemistry")Chemistry
+                    @Html.CheckBox("Math")Math
+                </td>
+            </tr>
+            <tr>
+                <td>@Html.Label("Username")</td>
+                <td>@Html.TextBox("username")</td>
+            </tr>
+            <tr>
+                <td>@Html.Label("Password")</td>
+                <td>@Html.Password("password")</td>
+            </tr>
+            <tr>
+                <td>@Html.Label("Comment")</td>
+                <td>@Html.TextArea("comment", "")</td>
+            </tr>
+            <tr>
+                <td>
+                    <input type="submit" value="Register" />
+                </td>
+                <td>
+                    <input type="reset" value="Cancel" />
+                </td>
+            </tr>
+        </table>
+    }
+</body>
+</html>

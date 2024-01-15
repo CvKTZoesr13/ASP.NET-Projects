@@ -1,0 +1,16 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title>@Page.Title</title>
+    @RenderSection("head", required: false)
+</head>
+<body>
+    <h1>Hanoi University of Industry</h1>
+    @Html.ActionLink("Kỹ thuật lập trình", "Kythuat", "fit") <br />
+    @Html.ActionLink("Hệ thống thông tin", "Hethong", "fit") <br />
+    <hr/>
+    @RenderBody()
+    <hr />
+    <h4>Falculty of Information Technology</h4>
+</body>
+</html>

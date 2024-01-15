@@ -1,0 +1,36 @@
+﻿
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<style>
+    img {
+        max-width: 1280px;
+        max-width: 720px;
+        object-fit: fill;
+    }
+</style>
+<h2>Staff Information</h2>
+<form method="post" enctype="multipart/form-data" action="/staff/Save">
+    <div>Staff ID:</div>
+
+    <input type="text" name="txtId" value="@ViewBag.Id" /> <br />
+    <div>Staff's Name:</div>
+
+    <input type="text" name="txtName" value="@ViewBag.Name" /> <br />
+    <div>Date of bith:</div>
+
+    <input type="date" name="txtDateOfBirth" value="@ViewBag.BirthDay" /> <br />
+    <div>Salary:</div>
+
+    <input type="text" name="txtSalary" value="@ViewBag.Salary" /> <br />
+    <div>Image:</div> <br />
+    <div>
+        <input id="fileUpload" type="file" class="fileUpload1" name="myImage" /> <hr />
+        <b>Live Preview</b> <br />
+        <img src="@ViewBag.Image" id="dvPreview" />
+    </div>
+    <input type="submit" value="Save" />
+    <input type="button" value="Open" onclick="location.href='@Url.Action("Open", "Staff")'" />
+</form>
+<p>@ViewBag.Message</p>

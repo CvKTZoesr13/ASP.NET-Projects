@@ -1,0 +1,29 @@
+﻿
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_MainLayout.cshtml";
+}
+
+<h2>Simple Calculator</h2>
+
+<form id="calForm" action="Sum" method="post">
+    <input name="inputA" placeholder="nhap vao a..." />
+    <input name="inputB" placeholder="nhap vao b..." />
+    <div class="row">
+        <input name="operator" type="radio" value="sum" /><label>Sum</label>
+        <input name="operator" type="radio" value="minus" /><label>Minus</label>
+        <input name="operator" type="radio" value="multi" /><label>Multi</label>
+        <input name="operator" type="radio" value="devide" /><label>Devide</label>
+    </div>
+    <input type="submit" value="Calculate" />
+</form>
+<div>@ViewBag.result</div>
+<script type="text/javascript">
+    var calForm = document.getElementById("calForm")
+    const radiosButton = document.querySelectorAll('input[name="operator"]')
+    for (const radioBtn of radiosButton) {
+        radioBtn.addEventListener("click", () => {
+            calForm.action = radioBtn.value
+        })
+    }
+</script>
